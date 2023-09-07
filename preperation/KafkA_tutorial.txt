@@ -1,0 +1,34 @@
+Ref: https://www.youtube.com/watch?v=U17DtHLOsTU&list=PLGRDMO4rOGcNLwoack4ZiTyewUcF6y6BU
+
+Each Kafka Cluster will have minimum 3 Kafka Brokers.
+
+Kafka Broker is a kafka server  => flow is something like this  Producer -> Kafka Server/Broker -> Consumer
+
+Kafka Broker will have many topics based on the categories. For this topic kafka server/broker will maintain the db for the consumer to pickup
+
+Each topic is made into multiple parts making it as Partition-1, Partition-2, these partitions are in unchangeable sequence.
+
+ZoolKeeper : its very important for this server to keep running so we start this first 
+
+Kafka server: after running the zoolkeeper /bin/zoolkeeper.sh /config/properties.properties we will run the kafka server in similar way.
+
+Spring Boot application will have the dependencies -> spring-web, spring for apache kafka, 
+
+Configurations in application.properties in the SBapp:
+
+spring.kafka.consumer.boot-strap-server: localhost:9092, localhost:9094
+spring.kafka.consumer.group-id: myGroup
+spring.kafka.consumer.auto-offset-reset: earliest
+spring.kafka.consumer.key-deserializer: org.spring.kafka.common.serialization.StringDeserializer    #values from the topics will be DeSerialized for consumer
+spring.kafka.consumer.value-deserializer: org.spring.kafka.common.serialization.StringDeserializer
+
+
+spring.kafka.producer.boot-strap-server: localhost:9092
+spring.kafka.producer.key-deserializer: org.spring.kafka.common.serialization.StringSerializer    #values from the topics will be serialized for producer
+spring.kafka.producer.value-deserializer: org.spring.kafka.common.serialization.StringSerializer
+
+Here we can use the java - json object while sending from the producer and the receive them to deserialize the json byte array to java object for the values only
+spring.kafka.consumer.value-deserializer: org.spring.kafka.support.serializer.JsonDeserializer
+
+@KafkaListener(topic="", groupId="") -> we use it on top of the kafka consumer method 
+

@@ -1,0 +1,41 @@
+map vs flatmap
+immutable object creation
+service discovery and service registry
+define functional interface
+db table w.r.t many to many 
+mvc flow
+executor service
+object class methods
+why generics were introduced
+list vs set
+
+
+How to enable the spring cloud communication ?
+
+in the client pom add name -> spring.application.name=....
+
+eureka.client.register-with-register-with-eureka=false
+eureka.client.fetch-registry=false
+
+<properties>
+<java.version>8<java.version>
+<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+</properties>
+
+
+in each client add below configs in the pom file
+<dependency>
+<groupId> org.spring.framework.cloud </groupId>
+<artifactId> spring-cloud-starter-netflix-eureka-client </artifactId>
+</dependency>
+
+provide the @LoadBalanced for the RestTemplate
+
+instead of the localhost use the service name that we configured in each `spring.application.name`
+
+<dependency-management>
+<repository>
+
+How to you run the jar in docker file
+java -jar nfvd.jar
+java -Dserver.port=8183 -jar nfvd.jar

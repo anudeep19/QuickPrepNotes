@@ -1,0 +1,17 @@
+JPA Tutorial notes: https://www.youtube.com/watch?v=XszpXoII9Sg
+
+@builder -> returns the object after each setter
+
+@AllArgConstructor -> avoids the usage of all args constructor here by adding the Lombok dependency
+
+@Repository -> enables to add the JPA related stuff with extends JpaRepository(<Student>)
+
+@Embeddable (to have a child class with attributes like guardingEmail, guardingName  as straignt columns in the table, use this)
+
+@Embedded (use it for adding some object with attributes as linearly added columns in the table , here we give mapping from column name to class attribut name)
+
+JPQL -> here the query is written based on the class and the attributes but not on the actual database table name and column name
+
+@Query -> in spring boot jpa we annotate on the repository class's method definition, we don't need to implement it further
+
+@oneToMany -> marking an attribute to a list as foreign key entity

@@ -1,0 +1,18 @@
+https://www.youtube.com/watch?v=O90Tr2zXqR4
+
+Spring boot tutor
+
+Api Gateway
+   spring.cloud.gateway.discovery.locator.enabled=true
+   spring.cloud.gateway.discovery.locator.lower-case-service-id=true
+  
+Service registry
+spring cloud config server
+distributed tracing pattern
+Event Drive Architecture send msgs to a broker and receiver processes the req. Its loosely coupled
+
+- fallback method allows to send default return value to avoid failure of the caller
+- Circuit breaker pattern avoids continous calls to a failed micro service.
+- Retry mechanism helps to send caller multiple times for certain limit before reaching failed state
+- Rate Limit pattern limits number of calls from a caller micro service to callee microservice
+

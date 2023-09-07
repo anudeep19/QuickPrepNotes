@@ -1,0 +1,15 @@
+Intermediate operations:
+distinct, filter, limit, map, skip
+
+Terminal Operations:
+count, max, min, reduce, toarray, anyMatch, allMatch
+
+Java 8 features:
+Lambda, Default Methods, functional interface, stream api, date api
+
+
+map transforms, flatmap -> flattens the group of collections
+
+Search algorithms
+Executor fw
+Servelet life cycle

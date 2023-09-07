@@ -1,0 +1,22 @@
+refe: youtube.com/watch?v=LJkkFx7zJJQ
+change java version in the linux.
+
+java --version
+>> 1.7
+
+yum install java 1.8
+java --version
+>> 1.7
+
+We need to change to alternative java version
+
+alternatives --config java
+>>>>>>here you will get the listing, select the number to pick.
+
+java 1.7
+java 1.8
+
+>> 2
+java --version
+>> 1.8
+
